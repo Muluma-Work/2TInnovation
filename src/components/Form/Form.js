@@ -202,68 +202,6 @@ const Form = () => {
 
   return (
     <>
-      {/* <form id="wrappedInputsForm" method="post" class="container mt-5">
-      <h1>2T Innovation and Maquassi hills local municipality</h1>
-      <div class="form-group">
-        <label for="owner's name">Owner's name</label>
-        <input id="owner's name" type="text" required />
-
-        <label for="surname">Surname</label>
-        <input id="surname" type="text" required />
-
-        <label for="id-number">ID number</label>
-        <input id="id-number" type="text" required />
-
-        <label for="contact-number">Contact number</label>
-        <input id="contact-number" type="text" required />
-
-        <label for="address">Address</label>
-        <input id="address" type="text" required />
-
-        <label for="employment">Are you employed?</label>
-        <select id="employment">
-          <option value="option1">Yes</option>
-          <option value="option2">No</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="house-type">What is the house type?</label>
-        <select id="house-type">
-          <option value="option1">Residential</option>
-          <option value="option2">Business</option>
-        </select>
-
-        <label for="meter-number">Meter number</label>
-        <input id="meter-number" type="text" required />
-
-        <label for="meter-type">What is the meter type?</label>
-        <select id="meter-type">
-          <option value="option1">Pre-Paid</option>
-          <option value="option2">Conventional</option>
-        </select>
-
-        <label for="meter-condition">What is the house type?</label>
-        <select id="meter-condition">
-          <option value="option1">Good</option>
-          <option value="option2">Bad</option>
-        </select>
-
-        <label for="meter-readings">Meter readings:</label>
-        <input id="meter-readings" type="text" required />
-      </div>
-
-      <div class="form-group">
-        <label for="debtor-category">Debtor category</label>
-        <input id="debtor-category" type="text" required />
-
-        <label for="comments">Comments</label>
-        <input id="comments" type="text" required />
-      </div>
-
-      <button id="submitBtn" type="submit">Submit</button>
-    </form> */}
-
       <div className='login-Form'>
             <h1 className='mb-4' style={{textAlign:'center'}}>2T Innovation and Maquassi hills local municipality</h1>
             <div className='row'>
