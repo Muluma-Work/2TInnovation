@@ -53,7 +53,7 @@ const Form = () => {
     const updateId = (e) =>{
       setId(e.target.value);
       console.log('Id Number :' + id);
-      validateId()
+      
     }
 
     const updateOwnerName = (e) =>{
