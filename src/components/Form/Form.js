@@ -34,15 +34,15 @@ const Form = () => {
   const[waterComments, setWaterComments] = useState('');
 
   // errors
-  const [errors, setErrors] = useState([]);
+  // const [errors, setErrors] = useState([]);
 
-  let errorsList = [];
+  // let errorsList = [];
 
     // let birthD = id.substring(0,6);
-    let gender = id.substring(6,10);
-    let  citizenship = id.substring(10,11);
+    // let gender = id.substring(6,10);
+    // let  citizenship = id.substring(10,11);
 
-    Number(gender);
+    // Number(gender);
 
     // Update personal info
     const updatHouseNumber = (e) =>{
@@ -149,35 +149,35 @@ const Form = () => {
         console.log('Water Meter Condition :' + waterMeterCondition);
     }
 
-  const validateId = () =>{
+  // const validateId = () =>{
 
-    if(gender<=4999){
-      console.log('female');
-    }else if(gender>=5000 && gender<=9999){
-      console.log('male');
-    }
+  //   if(gender<=4999){
+  //     console.log('female');
+  //   }else if(gender>=5000 && gender<=9999){
+  //     console.log('male');
+  //   }
 
-    if(citizenship > 1){
-        errors.push('Invalid Id');
-        setErrors(errorsList);
-    }else if(citizenship === 0){
-      console.log('South African');
-    }else{
-      console.log('Permanent Resident');
-    }
+  //   if(citizenship > 1){
+  //       errors.push('Invalid Id');
+  //       setErrors(errorsList);
+  //   }else if(citizenship === 0){
+  //     console.log('South African');
+  //   }else{
+  //     console.log('Permanent Resident');
+  //   }
 
-    if(errors.length > 0){
-        // console.log('id error');
-        document.getElementById('idError').style.display = 'block'
-        document.getElementById('idError').innerText = errors
-        document.getElementById('btnSubmit').setAttribute('disabled','true')
+  //   if(errors.length > 0){
+  //       // console.log('id error');
+  //       document.getElementById('idError').style.display = 'block'
+  //       document.getElementById('idError').innerText = errors
+  //       document.getElementById('btnSubmit').setAttribute('disabled','true')
 
-    }else{
-        document.getElementById('idError').style.display = 'none'
-        document.getElementById('btnSubmit').removeAttribute('disabled')
-    }
+  //   }else{
+  //       document.getElementById('idError').style.display = 'none'
+  //       document.getElementById('btnSubmit').removeAttribute('disabled')
+  //   }
 
-  }
+  // }
 
   const submitForm = () =>{
     console.log('Water Meter Condition :' + waterMeterCondition);
