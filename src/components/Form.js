@@ -182,7 +182,7 @@ const Form = () => {
   return (
     <>
       <div className='login-Form'>
-            <h1 className='mb-4' style={{textAlign:'center'}}>2T Innovation and Maquassi hills local municipality</h1>
+            <h1 className='mb-4'>2T Innovation and Maquassi hills local municipality</h1>
             <div className='row'>
             <div className='col-md-2 col-sm-1'>
 
@@ -213,7 +213,8 @@ const Form = () => {
                     <div className="form-group row mb-4">
                         <label className="form-label col-3" htmlFor="name">Owner's Name</label>
                         <div className='col-9'>
-                            <input type="text" id="name" className="form-control" required onChange={updateOwnerName} value={name} />
+                            <input type="text" id="name" className="form-control" 
+                            required onChange={updateOwnerName} value={name} />
                         </div>
                     </div>
 
