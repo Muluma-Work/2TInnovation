@@ -47,106 +47,85 @@ const Form = () => {
     // Update personal info
     const updatHouseNumber = (e) =>{
       setHouseNumber(e.target.value)
-      console.log('House Number:' + houseNumber);
     }
 
     const updateId = (e) =>{
       setId(e.target.value);
-      console.log('Id Number :' + id);
-      
     }
 
     const updateOwnerName = (e) =>{
       setName(e.target.value)
-      console.log('Owner\'s name :' + name);
     }
 
     const updateSurname = (e) =>{
       setSurname(e.target.value)
-      console.log('Surname :' + surname);
     }
 
     const updateEmployeeStatus = (e) =>{
       setEmployeeStatus(e.target.value);
-      console.log('Employment Status :' + employeeStatus);
     }
 
     const updateContactNumber = (e) =>{
       setContactNumber(e.target.value);
-      console.log('Contact Number :' + contactNumber);
     }
 
     const updateAddress = (e) =>{
       setAddress(e.target.value);
-      console.log('Address :' + address);
     }
 
     // Update Electricity Info
     const updateMeterType = (e) =>{
       setMeterType(e.target.value);
-      console.log('Meter Type :' + meterType);
     }
 
     const updateElectricityMeterCondidtion = (e) =>{
       setElectricityMeterCondition(e.target.value);
-      console.log('Electricity Meter Condition :' + electricityMeterCondition);
     }
 
     const updateElectricityComments = (e) =>{
       setElectricityComment(e.target.value);
-      console.log('Electricity Comment :' + electricityComment);
     }
 
     // update Water info
 
     const updateAccountNumber = (e) =>{
       setAccountNumber(e.target.value);
-      console.log('Account Number :' + accountNumber);
     }
 
     const updateMeterNumber = (e)=>{
       setMeterNumber(e.target.value);
-      console.log('Meter Number :' + meterNumber);
     }
 
     const updateMetertReading = (e) =>{
       setMeterReading(e.target.value);
-      console.log('Meter Reading :' + meaterReading);
     }
 
     const updateNumberOfFlats = (e) =>{
       setNumberOfFlats(e.target.value);
-      console.log('Number of flats :' + numberOfFlats);
     }
 
     const updateBackRooms = (e) =>{
       setBackRooms(e.target.value);
-      console.log('Back rooms :' + backRoom);
     }
 
     const updateAccountType = (e) =>{
       setAccountType(e.target.value);
-      console.log('Account Type :' + accountType);
     }
 
     const updateDebtorCategory = (e) =>{
       setDebtorCategory(e.target.value)
-      console.log('Debtor category :' + debtorCategory);
     }
 
     const updatePossibleIndigent = (e) =>{
       setPossibleIndigent(e.target.value);
-      console.log('Possible Indigent :' + possibleIndigent);
     }
 
     const updateWaterComment = (e) =>{
       setWaterComments(e.target.value);
-      console.log('Water comments :' + waterComments);
     }
 
     const updateWaterMeterCondidtion = (e) =>{
         setWaterMeterCondition(e.target.value);
-        console.log('Water Meter Condition :' + waterMeterCondition);
     }
 
   // const validateId = () =>{

@@ -2,7 +2,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Form from './components/Form/Form';
+import Form from './components/Form';
 import Login from './components/Login';
 
 function App() {
