@@ -1,9 +1,24 @@
 import React from 'react'
-
 import { useState } from 'react'
+
+import { addDoc, collection } from "@firebase/firestore"
+import { auth, firestore } from '../firebase_setup/firebase';
 
 
 const Form = () => {
+
+  const logout = () => {
+    
+    
+
+    firestore.auth.signOut().then(function() {
+      // Sign-out successful.
+      auth.signOut();
+      console.log('Sign Out successful');
+    }).catch(function(error) {
+      // An error happened.
+    });
+}
 
   // form inputs
 
@@ -32,17 +47,6 @@ const Form = () => {
   const [debtorCategory, setDebtorCategory] = useState(''); 
   const [possibleIndigent, setPossibleIndigent] = useState('');
   const[waterComments, setWaterComments] = useState('');
-
-  // errors
-  // const [errors, setErrors] = useState([]);
-
-  // let errorsList = [];
-
-    // let birthD = id.substring(0,6);
-    // let gender = id.substring(6,10);
-    // let  citizenship = id.substring(10,11);
-
-    // Number(gender);
 
     // Update personal info
     const updatHouseNumber = (e) =>{
@@ -128,37 +132,9 @@ const Form = () => {
         setWaterMeterCondition(e.target.value);
     }
 
-  // const validateId = () =>{
-
-  //   if(gender<=4999){
-  //     console.log('female');
-  //   }else if(gender>=5000 && gender<=9999){
-  //     console.log('male');
-  //   }
-
-  //   if(citizenship > 1){
-  //       errors.push('Invalid Id');
-  //       setErrors(errorsList);
-  //   }else if(citizenship === 0){
-  //     console.log('South African');
-  //   }else{
-  //     console.log('Permanent Resident');
-  //   }
-
-  //   if(errors.length > 0){
-  //       // console.log('id error');
-  //       document.getElementById('idError').style.display = 'block'
-  //       document.getElementById('idError').innerText = errors
-  //       document.getElementById('btnSubmit').setAttribute('disabled','true')
-
-  //   }else{
-  //       document.getElementById('idError').style.display = 'none'
-  //       document.getElementById('btnSubmit').removeAttribute('disabled')
-  //   }
-
-  // }
-
   const submitForm = () =>{
+
+    // Displaying input to save to database
     console.log('Water Meter Condition :' + waterMeterCondition);
     console.log('Water comments :' + waterComments);
     console.log('Possible Indigent :' + possibleIndigent);
@@ -167,9 +143,11 @@ const Form = () => {
     console.log('Number of flats :' + numberOfFlats);
     console.log('Meter Reading :' + meaterReading);
     console.log('Account Number :' + accountNumber);
+
     console.log('Electricity Comment :' + electricityComment);
     console.log('Electricity Meter Condition :' + electricityMeterCondition);
     console.log('Meter Type :' + meterType);
+
     console.log('Address :' + address);
     console.log('Contact Number :' + contactNumber);
     console.log('Employment Status :' + employeeStatus);
@@ -177,10 +155,50 @@ const Form = () => {
     console.log('Owner\'s name :' + name);
     console.log('Id Number :' + id);
     console.log('House Number:' + houseNumber); 
+
+    // form information
+    const ref = collection(firestore, "Users");
+
+    let data = {
+
+      houseNumber: houseNumber,
+      id: id,
+      name: name,
+      surname: surname,
+      employeeStatus: employeeStatus,
+      contactNumber: contactNumber,
+      address: address,
+
+      meterType: meterType,
+      electricityMeterCondition: electricityMeterCondition,
+      electricityComment: electricityComment,
+
+      accountNumber: accountNumber,
+      meaterReading: meaterReading,
+      numberOfFlats: numberOfFlats,
+      accountType: accountType,
+      debtorCategory: debtorCategory,
+      possibleIndigent: possibleIndigent,
+      waterComments: waterComments,
+      waterMeterCondition: waterMeterCondition,
+      backRoom: backRoom
+    }
+
+    try {
+        addDoc(ref, data)
+        console.log("in the firebase section adding user ");
+      } catch(err) {
+        console.log(err)
+      }
   }
 
   return (
     <>
+
+      <h3>Welcome {auth.signOut()}</h3>
+      <button style={{ "marginLeft": "20px" , "textAlign":"center"}} 
+                  onClick={logout}>Logout</button>
+
       <div className='login-Form'>
             <h1 className='mb-4'>2T Innovation and Maquassi hills local municipality</h1>
             <div className='row'>

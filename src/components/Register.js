@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import bcrypt from 'bcryptjs';
 import { Link } from 'react-router-dom';
 
+// Firebase 
+import { addDoc, collection } from "@firebase/firestore"
+import { firestore } from "../firebase_setup/firebase"
+
 
 
 const Register = () => {
@@ -9,8 +13,32 @@ const Register = () => {
     const [phoneNumber, setPhoneNumber] = useState('');
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
-
     let hashedPassword = bcrypt.hashSync(password,10);
+
+    //Register 
+    const registerUser = () =>{
+
+        // User information
+        console.log("Name: " + name);
+        console.log("Phone Number: " + phoneNumber);
+        console.log("Password: " + hashedPassword);
+      
+        // Connecting to database
+        const ref = collection(firestore, "Users");
+
+        let data = {
+            name: name,
+            phoneNumber: phoneNumber,
+            password: hashedPassword
+        }
+
+        try {
+            addDoc(ref, data)
+            console.log("in the firebase section adding user ");
+        } catch(err) {
+            console.log(err)
+        }
+    }
 
     const updatePhoneNumber = (e) =>{
         setPhoneNumber(e.target.value);
@@ -24,27 +52,7 @@ const Register = () => {
         setPassword(e.target.value);
     }
 
-    const registerUser = () =>{
-
-        // User information
-        console.log("Name: " + name);
-        console.log("Phone Number: " + phoneNumber);
-        console.log("Password: " + hashedPassword);
-      
-        // Connecting to database
-        fetch('url comes in here',{
-            method: 'POST',
-            headers: {
-              Accept: 'application/json',
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-              name: name,  
-              email: phoneNumber,
-              password: hashedPassword,
-            }),
-        })
-    }
+    
 
 
 
@@ -58,7 +66,7 @@ const Register = () => {
 
         </div>
         <div className='col-md-4                    '>
-            <form>
+            <form onSubmit={registerUser}>
                 {   /* <!-- Name input --> */}
                 <div className="form-group row mb-4">
                     <label className="form-label col-3" htmlFor="name">Name</label>
@@ -88,7 +96,7 @@ const Register = () => {
                 {/* <!-- Register button --> */}
                 <div className="text-center">
                     {/* <!-- Submit button --> */}
-                    <Link to={"/login"} onClick={registerUser} type="button" className="btn btn-primary btn-block mb-4">
+                    <Link to={"/login"} onClick={registerUser} type="submit" className="btn btn-primary btn-block mb-4">
                         Submit
                     </Link>
                 </div>
