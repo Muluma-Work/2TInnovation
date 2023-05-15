@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Form from './components/Form';
 import Login from './components/Login';
 import Register from './components/Register';
+import AdminDashboard from './components/AdminDashboard';
 
 function App() {
   // const [user] = useAuthState(auth);
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' element={<Form />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/adminDash'  element={< AdminDashboard /> }/>
       </Routes>
     </BrowserRouter>
 

@@ -52,10 +52,6 @@ const Register = () => {
         setPassword(e.target.value);
     }
 
-    
-
-
-
   return (
     <div className='register-form'>
         
